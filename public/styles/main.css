@@ -1,0 +1,295 @@
+html {
+  background-color: #e4e9fd;
+  background-image: -webkit-linear-gradient(65deg, #a683e3 50%, #e4e9fd 50%);
+  min-height: 1000px;
+  font-family: "helvetica neue";
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  min-height: 100vh;
+}
+main {
+  text-align: center;
+  flex: 1 0 auto;
+}
+h1 {
+  color: #fff;
+  padding: 10px;
+}
+
+.box-header {
+  max-width: 400px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.box .item {
+  width: 800px;
+  height: 400px;
+  margin: 50px auto;
+  padding-left: 30px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+form.item {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  
+}
+
+form.item input[type="text"],
+form.item input[type="number"],
+form.item textarea {
+  margin-bottom: 2px;
+  padding: 2px;
+  width: 300px;
+  font-size: 12px;
+}
+
+form.item button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form.item button:hover {
+  background-color: #0056b3;
+}
+
+img {
+  width: 200px;
+  float: left;
+  margin-right: 10px;
+}
+.time {
+  font-size: 12px;
+}
+.info {
+  display: flex;
+  
+}
+
+.book-details {
+  flex-grow: 1;
+}
+
+
+#heading {
+  background-color: #a683e3;
+  text-align: center;
+}
+form.edit {
+  display: grid;
+  max-width: 400px;
+}
+.edit-box textarea {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.edit-box input[type="text"] {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.item {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+  clear: both;
+  padding-bottom: 50px;
+  max-width: 800px;
+  height: 400px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+  
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+#book {
+  max-width: 600px;
+  
+}
+
+input[type="checkbox"] {
+  margin: 20px;
+  margin-left: 0;
+}
+
+p {
+  margin: 0;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #00204a;
+}
+
+form {
+  text-align: center;
+  margin-left: 20px;
+  padding-top: 20px;
+}
+
+button.add {
+  min-height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #a683e3;
+  color: #fff;
+  font-size: 30px;
+  border-width: 0;
+}
+.tick {
+  position: relative;
+  bottom: 40px;
+  left: 150px;
+  width: 50px;
+
+}
+button.edit {
+  margin-left: 0px;
+  margin-right: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  border: none;
+  background: none;
+}
+
+
+.icon {
+  height: 20px;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  text-align: left;
+  height: 60px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 200;
+  width: 80%;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: inset 0 -3px 0 0 #a683e3;
+}
+
+::placeholder {
+  color: lightgray;
+  opacity: 1;
+}
+
+footer {
+  flex: 0 0 auto;
+  color: white;
+  text-align: center;
+}
+
+@media screen and (max-width: 412px) {
+  body {
+    font-size: 12px;
+  }
+  #book {
+    position: relative;
+    margin-right: 5px;
+    padding: 2px;
+    text-align: center;
+    max-width: 300px;
+  }
+  
+  .box-header {
+    max-width: 300px;
+  }
+  h1 {
+    
+    font-size: 16px;
+  }
+  h2 {
+    position: relative;
+    right: 25px;
+    top: 20px;
+    font-size: 12px;
+  }
+  .time {
+    font-size: 6px;
+  }
+  
+  .box .item {
+    width: 300px;
+    height: 200px;
+  }
+  
+  form.item input[type="text"],
+  form.item input[type="number"],
+  form.item textarea {
+    position: relative;
+    left: 15px;
+    width: 200px;
+    font-size: 10px;
+  }
+  button.add {
+    position: relative;
+    top: 20px;
+  }
+  
+  img {
+    position: relative;
+    width: 80px;
+    top: 40px;
+    right: 60px;
+  }
+  
+  input[type="checkbox"] {
+    position: relative;
+    margin: 0px;
+    right: 30px;
+  }
+  
+  p {
+    position: relative;
+    text-align: center;
+    top: 15px;
+    font-size: 8px;
+    margin-bottom: 5px;
+  }
+  .edit {
+    position: relative;
+    bottom: 20px;
+    
+  }
+  
+  input[type="text"], input[type="number"], textarea {
+    position: relative;
+    height: 15px;
+    font-size: 10px;
+    top: 15px;
+    right: 30px;
+  }
+  textarea {
+    height: 25px;
+  }
+
+}

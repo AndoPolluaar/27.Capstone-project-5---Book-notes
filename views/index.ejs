@@ -1,0 +1,86 @@
+<%- include('partials/header.ejs'); -%>
+
+<div class="box-header" id="heading">
+  <h1><%= listTitle %></h1>
+</div>
+<div class="box">
+  <form class="item" action="/add" method="post">
+    <input type="text" id="cover_isbn" name="cover_isbn" placeholder="ISBN (to fetch book cover)" required />
+    <input type="text" id="cover_url" name="cover_url" placeholder="URL for the book" required />
+    <input type="text" name="title" placeholder="Title" required />
+    <input type="text" name="author" placeholder="Author" required />
+    <input type="number" name="rating" placeholder="Rating" min="0" max="10" autocomplete="off" required />
+    <textarea name="conclusion" placeholder="Conclusion" cols="10" rows="5" required></textarea>
+    <button class="add" type="submit" name="list" value="<%= listTitle %>">+</button>
+  </form>
+  <% listItems.forEach(item => { %>
+    <div class="item">
+      <form action="/delete" method="post">
+        <input type="checkbox" onchange="this.form.submit()" name="deleteItemId" value="<%= item.id %>">
+      </form>
+      <ul>
+        <li class="info">
+          <p id="title<%= item.id %>">
+            <!-- Title Rendered Here -->
+            
+            <div class="book-details">
+                <div id="book<%= item.id %>">
+                  <img src="https://covers.openlibrary.org/b/id/<%= item.cover_isbn %>-L.jpg" alt="<%= item.title %> cover photo">
+                  <h2>Title: <%= item.title %></h2>
+                  <p>Author: <%= item.author %></p>
+                  <p class="time">Added: <%= item.created_at %></p>
+                  <p>Rating: <%= item.rating %> /10</p>
+                  <p>Conclusion: <%= item.conclusion %></p>
+                  <a href="<%= item.cover_url %>">Link to book</a>
+                </div>
+                <div class="edit-box">  
+                  <form class="edit" action="/edit" method="post">
+                    <input type="hidden" name="updatedItemId" value="<%= item.id %>">
+                    <input type="text" id="updatedItemTitle<%= item.id %>" name="updatedItemTitle" value="<%= item.title %>" hidden />
+                    <input type="text" id="updatedItemAuthor<%= item.id %>" name="updatedItemAuthor" value="<%= item.author %>" hidden />
+                    <input type="number" id="updatedItemRating<%= item.id %>" name="updatedItemRating" value="<%= item.rating %>" hidden />
+                    <textarea name="updatedItemConclusion" id="updatedItemConclusion<%= item.id %>" hidden><%= item.conclusion %></textarea>
+                    <input type="text" id="updatedItemCoverISBN<%= item.id %>" name="updatedItemCoverISBN" value="<%= item.cover_isbn %>" hidden />
+                    <input type="text" id="updatedItemCoverURL<%= item.id %>" name="updatedItemCoverURL" value="<%= item.cover_url %>" hidden />
+                    <button id="done<%= item.id %>" class="edit tick" type="submit" hidden>
+                      <img class="icon" src="/assets/icons/check-solid.svg" alt="tick image">
+                    </button>
+                  </form>
+                  <button id="edit<%= item.id %>" class="edit" onclick="handler('<%= item.id %>')">
+                    <img class="icon" src="/assets/icons/pencil-solid.svg" alt="pencil image">
+                  </button>
+                  
+                </div>
+            </div>
+          </p>
+        </li>
+      </ul>
+    </div>
+   
+    <% }); %>
+
+  
+</div>
+
+<script>
+ function handler(id) {
+  document.getElementById("title" + id).setAttribute("hidden", true);
+  document.getElementById("edit" + id).setAttribute("hidden", true);
+  document.getElementById("done" + id).removeAttribute("hidden");
+  
+  document.getElementById("updatedItemTitle" + id).removeAttribute("hidden");
+  document.getElementById("updatedItemAuthor" + id).removeAttribute("hidden");
+  document.getElementById("updatedItemRating" + id).removeAttribute("hidden");
+  document.getElementById("updatedItemConclusion" + id).removeAttribute("hidden");
+  document.getElementById("updatedItemCoverISBN" + id).removeAttribute("hidden");
+  document.getElementById("updatedItemCoverURL" + id).removeAttribute("hidden");
+  document.getElementById("book" + id).setAttribute("hidden", true);
+}
+
+
+/*function hideDetails() {
+    document.getElementById('book').style.display = 'none';
+  };*/
+</script>
+
+<%- include('partials/footer.ejs'); -%>
