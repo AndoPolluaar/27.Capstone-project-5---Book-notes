@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js" 
   },
   "keywords": [],
   "author": "",
@@ -21,7 +21,6 @@
     "pg": "^8.11.3"
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1",
-    "homepage": "https://github.com/AndoPolluaar/27.Capstone-project-5---Book-notes/settings/pages"
+    "gh-pages": "^6.1.1"
   }
 }
