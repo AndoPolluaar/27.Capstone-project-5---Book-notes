@@ -21,6 +21,7 @@
     "pg": "^8.11.3"
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.1.1",
+    "homepage": "https://andopolluaar.github.io/27.Capstone-project-5---Book-notes"
   }
 }
